@@ -1,0 +1,15 @@
+{
+  "name": "projet-3",
+  "version": "1.0.0",
+  "description": "Dossier à destination du projet 3 pour OpenClassrooms. Projet autour de Oh my food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "author": "GUETTE Cédric",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}

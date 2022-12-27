@@ -1,3 +1,345 @@
+body {
+  font-family: "Roboto";
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
 
+.header {
+  background-color: #fff;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: center;
+}
+.header__links {
+  list-style-type: none;
+}
+.header__links a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.location {
+  background-color: #EAEAEA;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.start {
+  background-color: #F7F7F7;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.howtouse {
+  background-color: #fff;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: none;
+}
+
+.listing {
+  background-color: #F7F7F7;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: left;
+}
+.listing__links {
+  list-style-type: none;
+}
+.listing__links a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #353535;
+  color: #fff;
+  flex-basis: 100%;
+  text-align: left;
+}
+.footer__links {
+  list-style-type: none;
+}
+.footer__links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.order {
+  background-color: #F7F7F7;
+  color: #000000;
+  flex-basis: 100%;
+  text-align: left;
+}
+
+.header {
+  font-family: "Shrikhand", cursive;
+  font-size: 25px;
+  padding: 10px 0 10px 0;
+  box-shadow: 0 5px 3px #c4c4c4;
+  z-index: 1;
+}
+.header__links {
+  position: absolute;
+  left: 30px;
+}
+
+.location {
+  font-size: 14px;
+  padding: 10px 0 10px 0;
+  color: #353535;
+  padding-right: 10px;
+  z-index: 0;
+}
+.location i {
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.btn__start {
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 0.8em 1.3em;
+  box-shadow: 0px 5px 5px #c4c4c4;
+  background: linear-gradient(to right, #FF79DA, #9356DC);
+  margin-bottom: 20px;
+}
+.btn__start:hover {
+  background: linear-gradient(to right, #ff46cc, #782cd3);
+  box-shadow: 0px 5px 5px #aaaaaa;
+}
+.btn__order {
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 0.9em 3em;
+  box-shadow: 0px 5px 5px #c4c4c4;
+  background: linear-gradient(to right, #FF79DA, #9356DC);
+  margin-bottom: 20px;
+}
+.btn__order:hover {
+  background: linear-gradient(to right, #ff46cc, #782cd3);
+  box-shadow: 0px 5px 5px #aaaaaa;
+}
+
+.start {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.start h2 {
+  font-size: bold;
+  padding-top: 15px;
+  flex-basis: 65%;
+}
+.start h4 {
+  flex-basis: 90%;
+  font-weight: 100;
+  margin-top: -5px;
+  padding-bottom: 7px;
+}
+
+.howtouse {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 35px;
+}
+.howtouse h2 {
+  margin: 30px 0px 3px 20px;
+  flex-basis: 100%;
+}
+.howtouse__number {
+  background-color: #9356DC;
+  color: #fff;
+  width: 25px;
+  height: 22px;
+  padding-top: 3px;
+  margin-right: 50px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  top: 47px;
+  left: 8px;
+}
+.howtouse__step {
+  flex-basis: 90%;
+  font-weight: bold;
+  margin-left: 20px;
+  padding: 1.5em 0em;
+  background-color: #F7F7F7;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 5px 5px 5px #c4c4c4;
+}
+.howtouse__step i {
+  padding: 0em 1em 0em 2em;
+  text-align: left;
+  font-size: 20px;
+  color: #6b6b6b;
+}
+.howtouse__step--darker {
+  flex-basis: 90%;
+  font-weight: bold;
+  margin-left: 20px;
+  padding: 1.5em 0em;
+  background-color: #F5EDff;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 5px 5px 5px #c4c4c4;
+}
+.howtouse__step--darker i {
+  padding: 0em 1em 0em 2em;
+  text-align: left;
+  font-size: 20px;
+  color: #9356DC;
+}
+
+.listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.listing__links {
+  flex-basis: 90%;
+}
+.listing h2 {
+  margin: 30px 0px 3px 20px;
+  flex-basis: 100%;
+}
+.listing .restaurant {
+  flex-basis: 90%;
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 5px 10px 10px #c4c4c4;
+  margin: 20px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.listing .restaurant img {
+  width: 100%;
+  flex-basis: 100%;
+  height: 174px;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+}
+.listing .restaurant__new {
+  display: inline-block;
+  background-color: #99E2D0;
+  color: #278870;
+  font-size: 12px;
+  position: relative;
+  top: 54px;
+  left: 80%;
+  height: 1.7em;
+  width: 4.7em;
+  padding: 0.4em 0 0 0.5em;
+}
+.listing .restaurant__description {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.listing .restaurant__description--title {
+  flex-basis: 50%;
+  font-weight: bold;
+  padding: 1em 0.5em 0.2em 0.7em;
+}
+.listing .restaurant__description--location {
+  flex-basis: 50%;
+  font-weight: 100;
+  padding: 0.1em 0 1em 0.7em;
+}
+.listing .restaurant__favorite {
+  padding-top: 20px;
+  font-size: 25px;
+  margin: -2px 20px 0px 0;
+  font-weight: light;
+  flex-basis: 10%;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+.menu img {
+  flex-basis: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  position: absolute;
+  top: -20px;
+}
+.menu .order {
+  z-index: 1;
+  margin-top: 250px;
+  flex-basis: 100%;
+  border-radius: 40px 40px 0px 0px;
+  padding: 30px 20px 0 20px;
+}
+.menu .order__restaurant {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .order__restaurant .name {
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
+}
+.menu .order__restaurant .favorite {
+  font-size: 30px;
+  padding-right: 10px;
+}
+.menu .order__title {
+  flex-basis: 100%;
+  padding-top: 30px;
+  font-weight: 100;
+  padding-bottom: 4px;
+  box-shadow: 40px 3px 0px #F7F7F7, 0px 3px 0px #99E2D0;
+}
+.menu .order__meal {
+  margin-top: 15px;
+  background-color: #fff;
+  flex-basis: 100%;
+  box-shadow: 1px 0px 10px #c4c4c4;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  display: flex;
+}
+.menu .order__meal .description {
+  flex-basis: 90%;
+}
+.menu .order__meal .description__title {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.menu .order__meal .description__add {
+  font-weight: 100;
+  font-size: 16px;
+}
+.menu .order__meal .price {
+  position: relative;
+  bottom: 0px;
+}
+.menu .order .buy {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+  font-size: 15px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.footer ul {
+  padding-inline-start: 20px;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,65 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+body{
+    font-family: $font_page;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px; //provisoire
+}
+
+@include bgandfontcolor ($palette);
+
+.header{
+    font-family: $font_logo;
+    font-size: $font_logo_header_size;
+}
+.location{
+    font-size: $font_logo_header_size;
+}
+.howtouse{
+    display: flex;
+    &__step{
+        background-color: $light-grey;
+        border-radius: 20px 20px 20px 20px;
+        &--darker{
+            background-color: $light-grey;
+            border-radius: 20px 20px 20px 20px;
+        }
+    }
+}
+.listing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & h2{
+        flex-basis: 100%;
+    }
+}
+
+.restaurant{
+    flex-basis: 90%;
+    background-color: $white;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 10px 10px grey; //provisoire (couleur)
+    margin-bottom: 15px;
+
+    & img{
+        width: 100%;
+        height: 339px; //provisoire
+        border-radius: 20px 20px 0px 0px;
+        object-fit: cover;
+    }
+}
+.footer{
+    &__logo{
+        font-family: $font_logo;
+        font-size: $font_logo_footer_size;
+    }
+}
+
+.header, .location,.start, .howtouse, .listing, .footer{
+    flex-basis: 100%;
+    text-align: center;
+}
