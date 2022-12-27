@@ -38,6 +38,8 @@
     }
 }
 
+//This mixin is here to factorise the code
+
 @mixin margin-title (){
      h2{
         margin: 30px 0px 3px 20px;

@@ -9,34 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> <!-- Preloading Shrinkhand and Roboto font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> <!-- Preloading font weigt 100-->
     <script src="https://kit.fontawesome.com/6d007459a5.js" crossorigin="anonymous"></script> <!-- Initialisation of font awesome logos -->
-    
     <title>Ohmyfood - Page d'accueil</title>
 </head>
 <body>
     <header class="header">
         <div class="header__logo">ohmyfood</div>
     </header>
-    <div class="location"><i class="fa-sharp fa-solid fa-location-dot"></i> Paris, Belleville</div>
+    <div class="location">
+        <i class="fa-sharp fa-solid fa-location-dot"></i><input class="location__search" type="text" name="recherche" placeholder="Localisation" value="Paris, Belleville">
+    </div>
     <div class="start">
         <h2>Réservez le menu qui vous convient</h2>
         <h4>Découvrez des restaurants d'exception, sélectionnés par nos soins.</h4>
-        <button class="btn__start" type="button">Explorer nos restaurants</button>
+        <a class="start__btn" href="#listing">Explorer nos restaurants</a>
     </div>
     <div class="howtouse">
         <h2>Fonctionnement</h2>
         <div class="howtouse__number">1</div><div class="howtouse__step"> <i class="fa-solid fa-mobile-screen-button"></i> Choisissez un restaurant</div>
         <div class="howtouse__number">2</div><div class="howtouse__step"> <i class="fa-solid fa-list-ul"></i> Composez vos menu</div>
-        <div class="howtouse__number">3</div><div class="howtouse__step--darker"> <i class="fa-sharp fa-solid fa-store"></i> Dégustez au restaurant</div>
+        <div class="howtouse__number">3</div><div class="howtouse__step"> <i class="fa-sharp fa-solid fa-store"></i> Dégustez au restaurant</div>
     </div>
-    <main class="listing">
+    <main class="listing" id="listing">
         <h2>Restaurants</h2>
         <div class="listing__links">
             <a href="lapalettedugout.html">
-                <span class="restaurant__new">Nouveau</span>
                 <div class="restaurant">
-                    
+                    <span class="restaurant__new">Nouveau</span>
                     <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurant La palette du goût">
-
                     <div class="restaurant__description">
                         <div class="restaurant__description--title">
                             La palette du goût
@@ -51,8 +50,8 @@
                 </div>
             </a>
             <a href="lanoteenchantee.html">
-                <span class="restaurant__new">Nouveau</span>
                 <div class="restaurant">
+                    <span class="restaurant__new">Nouveau</span>
                     <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="Restaurant La note enchantée">
 
                     <div class="restaurant__description">
