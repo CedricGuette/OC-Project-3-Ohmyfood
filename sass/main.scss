@@ -5,7 +5,8 @@ body{
     font-family: $font_page;
     display: flex;
     flex-wrap: wrap;
-    max-width: 1400px; //provisoire
+    margin: 0;
+
 }
 
 @include bgandfontcolor ($palette);
@@ -13,18 +14,105 @@ body{
 .header{
     font-family: $font_logo;
     font-size: $font_logo_header_size;
+    padding: 10px 0 10px 0;
+    box-shadow: 0 5px 3px darken($grey,15%);
+    z-index: 1;
+
+    &__links{
+        position: absolute;
+        left: 30px;
+    }
 }
 .location{
-    font-size: $font_logo_header_size;
+    font-size: 14px;
+    padding: 10px 0 10px 0;
+    color: $dark-grey;
+    padding-right: 10px;
+    z-index: 0;
+    i{
+        padding-right: 10px;
+        font-size: 16px;
+    }
 }
+
+.btn{
+    &__start{
+        border : none;
+        color: $white;
+        border-radius: 30px;
+        font-size: 16px;
+        padding: 0.8em 1.3em;
+        box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
+        background: linear-gradient(to right, $color_secondary, $color_primary);
+        margin-bottom: 20px;
+
+        &:hover{
+            background: linear-gradient(to right, darken($color_secondary,10%), darken($color_primary,10%));
+            box-shadow: 0px 5px 5px darken($grey,25%);
+        }
+    }
+
+    &__order{
+        border : none;
+        color: $white;
+        border-radius: 30px;
+        font-size: 15px;
+        padding: 0.9em 3em;
+        box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
+        background: linear-gradient(to right, $color_secondary, $color_primary);
+        margin-bottom: 20px;
+
+        &:hover{
+            background: linear-gradient(to right, darken($color_secondary,10%), darken($color_primary,10%));
+            box-shadow: 0px 5px 5px darken($grey,25%);
+        }
+    }
+}
+
+
+.start{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
+    h2{
+        font-size: bold;
+        padding-top: 15px;
+        flex-basis: 65%;
+    }
+    h4{
+        flex-basis: 90%;
+        font-weight: 100;
+        margin-top: -5px;
+        padding-bottom: 7px;
+    }
+}
+
 .howtouse{
     display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+    @include margin-title;
+    
+    &__number{
+        background-color: $color_primary;
+        color: $white;
+        width: 25px;
+        height: 22px;
+        padding-top: 3px;
+        margin-right: 50px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        top:47px;
+        left:8px;
+    }
+
     &__step{
-        background-color: $light-grey;
-        border-radius: 20px 20px 20px 20px;
+        @include step ($light-grey, darken($grey,50%));
+
         &--darker{
-            background-color: $light-grey;
-            border-radius: 20px 20px 20px 20px;
+            @include step ($blue-grey, $color_primary);
         }
     }
 }
@@ -33,33 +121,159 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 
-    & h2{
+    &__links{
+        flex-basis: 90%;
+    }
+
+    @include margin-title;
+
+    .restaurant{
+        flex-basis: 90%;
+        background-color: $white;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 5px 10px 10px darken($grey,15%); //provisoire (couleur)
+        margin: 20px 0 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+         img{
+            width: 100%;
+            flex-basis: 100%;
+            height: 174px; //provisoire
+            border-radius: 20px 20px 0px 0px;
+            object-fit: cover;
+        }
+    
+        &__new{
+            display: inline-block;
+            background-color: $color_tertiary;
+            color: darken($color_tertiary,40%);
+            font-size: 12px;
+            position: relative;
+            top: 54px;
+            left: 80%;
+            height: 1.7em;
+            width: 4.7em;
+            padding: 0.4em 0 0 0.5em ;
+        }
+    
+        &__description{
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+    
+            &--title{
+                flex-basis: 50%;
+                font-weight: bold;
+                padding: 1em 0.5em 0.2em 0.7em;
+            }
+            &--location{
+                flex-basis: 50%;
+                font-weight: 100;
+                padding: 0.1em 0 1em 0.7em;
+            }
+        }
+        &__favorite{
+            padding-top: 20px;
+            font-size: 25px;
+            margin: -2px 20px 0px 0;
+            font-weight: light;
+            flex-basis: 10%;
+        }
+    }
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    img{
         flex-basis: 100%;
-    }
-}
-
-.restaurant{
-    flex-basis: 90%;
-    background-color: $white;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 5px 10px 10px grey; //provisoire (couleur)
-    margin-bottom: 15px;
-
-    & img{
-        width: 100%;
-        height: 339px; //provisoire
-        border-radius: 20px 20px 0px 0px;
+        width:100%;
         object-fit: cover;
+        z-index: 0;
+        position: absolute;
+        top: -20px;
+    }
+    
+    .order{
+        z-index: 1;
+        margin-top: 250px;
+        flex-basis: 100%;
+        border-radius: 40px 40px 0px 0px;
+        padding: 30px 20px 0 20px;
+
+        &__restaurant{
+            display: flex;
+            justify-content: space-between;
+
+            .name{
+                font-family: $font_logo;
+                font-size: 30px;
+            }
+            .favorite{
+              font-size: 30px; 
+              padding-right: 10px; 
+            }
+        }
+
+        &__title{
+            flex-basis: 100%;
+            padding-top: 30px;
+            font-weight: 100;
+            padding-bottom: 4px;
+            box-shadow:   40px 3px 0px  map-get(map-get($palette, order), bg), 0px 3px 0px $color_tertiary;
+        }
+
+        &__meal{
+            margin-top: 15px;
+            background-color: $white;
+            flex-basis: 100%;
+            box-shadow: 1px 0px 10px darken($grey,15%);
+            border-radius: 10px 10px 10px 10px;
+            padding: 10px;
+            display: flex;
+
+            .description{
+                flex-basis: 90%;
+
+                &__title{
+                    font-weight: bold;
+                    padding-bottom: 5px;
+                }
+
+                &__add{
+                    font-weight: 100;
+                    font-size: 16px;
+                }
+            }
+
+            .price{
+                position: relative;
+                bottom: 0px;
+            }
+        }
+    
+        .buy{
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
     }
 }
+
+
+
 .footer{
     &__logo{
         font-family: $font_logo;
         font-size: $font_logo_footer_size;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+     ul{
+        padding-inline-start: 20px;
     }
 }
 
-.header, .location,.start, .howtouse, .listing, .footer{
-    flex-basis: 100%;
-    text-align: center;
-}
