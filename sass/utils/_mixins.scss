@@ -6,7 +6,9 @@
             background-color: map-get($option, bg);
             color: map-get($option, color);
             flex-basis: map-get($option, flex);
-            text-align: map-get($option, align);
+            @if(map-get($option, align) != none){
+                text-align: map-get($option, align);
+            }
             @if(map-get($option, links) == yes){
                 &__links{
                     list-style-type : none;
@@ -20,25 +22,7 @@
     }
 }
 
-//mixin to set the steps on how to use pannel in function of a bg color
-
-@mixin step ($bgcolor, $iconcolor){
-    flex-basis: 90%;
-    font-weight: bold;
-    margin-left:20px;
-    padding: 1.5em 0em;
-    background-color: $bgcolor;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 5px 5px 5px darken($grey,15%);
-     i{
-        padding: 0em 1em 0em 2em;
-        text-align: left;
-        font-size: 20px;
-        color: $iconcolor;
-    }
-}
-
-//This mixin is here to factorise the code
+//This mixin is to factorise the code
 
 @mixin margin-title (){
      h2{
@@ -46,3 +30,17 @@
         flex-basis: 100%;
     }
 }
+
+//Mixins to inclusive content
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+        }
+    }
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)){
+         @content;
+        }
+    }

@@ -2,18 +2,165 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Initialisation of google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Initialisation of google font --> <!-- Preloading Shrinkhand font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet"> <!-- Preloading Shrinkhand and Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> <!-- Preloading font weigt 100-->
     <script src="https://kit.fontawesome.com/6d007459a5.js" crossorigin="anonymous"></script> <!-- Initialisation of font awesome logos -->
     
-    <title>Ohmyfood - Page d'accueil</title>
+    <title>Ohmyfood - Réstaurant La palette du goût</title>
 </head>
 <body>
     <header class="header">
+        <div class="header__links"><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a></div>
         <div class="header__logo">ohmyfood</div>
     </header>
+    <main class="menu">
+        <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Illustration de la palette du goût">
+        <div class="order">
+            <div class="order__restaurant">
+                <span class="name">
+                    La palette du goût
+                </span>
+                <input type="checkbox" id="favorite">
+                <label class="heart heart--pages" for="favorite">
+                    <i class="fa-regular fa-heart favorite-empty"></i>
+                    <i class="fa-solid fa-heart favorite-full"></i>
+                </label>
+            </div>
+            <section class="order__section">
+                <h2 class="order__category">ENTRÉES</h2>
+                <input type="checkbox" id="r1">
+                <label class="order__meal order__meal--1" for="r1">
+                    <span class="order__meal--unselected ">
+                        <span class="description">
+                            <span class="description__title">Fricassée d'escargot</span>
+                            <span class="description__add">Au piment d'Espelette </span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">25€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r2">
+                <label class="order__meal order__meal--2" for="r2">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Foie gras de canard mi-cuit</span>
+                            <span class="description__add">Et ses copeaux de truffe noire</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">35€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r3">
+                <label class="order__meal order__meal--3" for="r3">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Œuf au plat</span>
+                            <span class="description__add">Assaisonné à la truffe sur lit de caviar</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">20€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+            </section>
+            <section class="order__section">
+                <h2 class="order__category">PLATS</h2>
+                <input type="checkbox" id="r4">
+                <label class="order__meal order__meal--1" for="r4">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Filet de boeuf aux herbes</span>
+                            <span class="description__add">Accompagné de sa ribambelle de légumes</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">40€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r5">
+                <label class="order__meal order__meal--2" for="r5">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Parmentier de queue de boeuf</span>
+                            <span class="description__add">À la truffe noire sur sa purée de panais</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">35€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r6">
+                <label class="order__meal order__meal--3" for="r6">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Filet de turbot</span>
+                            <span class="description__add">Aux agrumes</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">44€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+            </section>
+            <section class="order__section">
+                <h2 class="order__category">DESSERTS</h2>
+                <input type="checkbox" id="r7">
+                <label class="order__meal order__meal--1" for="r7">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Paris-Brest</span>
+                            <span class="description__add">Revisité</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">18€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r8">
+                <label class="order__meal order__meal--2" for="r8">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Macaron au chocolat d'exception</span>
+                            <span class="description__add">Et glace à la vanille de Madagascar</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">22€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+                <input type="checkbox" id="r9">
+                <label class="order__meal order__meal--3" for="r9">
+                    <span class="order__meal--unselected">
+                        <span class="description">
+                            <span class="description__title">Mousse au chocolat</span>
+                            <span class="description__add">Au piment d'Espelette et à la truffe noire</span>
+                        </span>
+                        <span class="container">
+                            <span class="container__price">23€</span>
+                        </span>
+                    </span>
+                    <span class="pick"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+            </section>
+            <div class="buy">
+                <button class="btn btn--pages" type="button">Commander</button>
+            </div>
+        </div>
+    </main>
     <footer class="footer">
         <div class="footer__logo">ohmyfood</div>
         <ul class="footer__links">

@@ -83,13 +83,18 @@
 }
 html {
   scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  background-color: #f2eafb;
 }
 
 body {
   font-family: "Roboto";
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0;
+  max-width: 1400px;
 }
 
 .header {
@@ -124,7 +129,6 @@ body {
   background-color: #fff;
   color: #000000;
   flex-basis: 100%;
-  text-align: none;
 }
 
 .listing {
@@ -233,6 +237,7 @@ body {
 }
 
 .header {
+  position: relative;
   font-family: "Shrikhand", cursive;
   font-size: 25px;
   padding: 10px 0 10px 0;
@@ -277,7 +282,7 @@ body {
   padding-bottom: 30px;
 }
 .start h2 {
-  font-size: bold;
+  font-weight: bold;
   padding-top: 15px;
   flex-basis: 65%;
 }
@@ -291,6 +296,7 @@ body {
 .howtouse {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   padding-bottom: 35px;
 }
 .howtouse h2 {
@@ -306,18 +312,31 @@ body {
   margin-right: 50px;
   border-radius: 20px;
   text-align: center;
-  position: relative;
-  top: 47px;
-  left: 8px;
+  position: absolute;
+  top: 22px;
+  left: -11px;
 }
 .howtouse__step {
+  position: relative;
+  margin-top: 15px;
   flex-basis: 90%;
   font-weight: bold;
-  margin-left: 20px;
+  left: 0%;
   padding: 1.5em 0em;
   background-color: #F7F7F7;
   border-radius: 20px 20px 20px 20px;
   box-shadow: 5px 5px 5px #c4c4c4;
+}
+@media screen and (min-width: 769px) {
+  .howtouse__step {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .howtouse__step {
+    text-align: left;
+    flex-basis: 30%;
+  }
 }
 .howtouse__step i {
   padding: 0em 1em 0em 2em;
@@ -326,46 +345,51 @@ body {
   color: #6b6b6b;
 }
 .howtouse__step:hover {
-  flex-basis: 90%;
-  font-weight: bold;
-  margin-left: 20px;
-  padding: 1.5em 0em;
   background-color: #F5EDff;
-  border-radius: 20px 20px 20px 20px;
-  box-shadow: 5px 5px 5px #c4c4c4;
 }
 .howtouse__step:hover i {
-  padding: 0em 1em 0em 2em;
-  text-align: left;
-  font-size: 20px;
   color: #9356DC;
 }
 
-.listing {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+@media screen and (min-width: 769px) {
+  .listing {
+    padding-bottom: 20px;
+  }
 }
 .listing__links {
-  flex-basis: 90%;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .listing h2 {
   margin: 30px 0px 3px 20px;
   flex-basis: 100%;
 }
 .listing .card {
+  flex-basis: 90%;
   position: relative;
+  margin: 20px 0 20px 0;
 }
 .listing .card:hover {
   box-shadow: 5px 10px 10px #aaaaaa;
   border-radius: 20px 20px 20px 20px;
 }
+@media screen and (min-width: 769px) {
+  .listing .card {
+    flex-basis: 45%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .listing .card {
+    flex-basis: 23%;
+  }
+}
 .listing .card .restaurant {
-  flex-basis: 90%;
+  position: relative;
   background-color: #fff;
   border-radius: 20px 20px 20px 20px;
   box-shadow: 5px 10px 10px #c4c4c4;
-  margin: 20px 0 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -391,7 +415,6 @@ body {
   top: 15px;
 }
 .listing .card .restaurant__description {
-  flex-basis: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -410,28 +433,38 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
+  position: relative;
 }
 .menu img {
   flex-basis: 100%;
-  width: 100%;
+  width: 120%;
+  max-height: 500px;
+  max-width: 1400px;
   -o-object-fit: cover;
   object-fit: cover;
   z-index: 0;
   position: absolute;
   top: -20px;
+  left: 0px;
+}
+@media screen and (min-width: 769px) {
+  .menu img {
+    top: -150px;
+  }
 }
 .menu .order {
   z-index: 1;
   margin-top: 250px;
   flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   border-radius: 40px 40px 0px 0px;
   padding: 30px 5% 0 5%;
 }
 .menu .order__restaurant {
-  display: flex;
-  justify-content: space-between;
   position: relative;
-  z-index: 0;
+  flex-basis: 100%;
 }
 .menu .order__restaurant .name {
   font-family: "Shrikhand", cursive;
@@ -472,17 +505,29 @@ body {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-.menu .order__category {
+.menu .order__section {
   flex-basis: 100%;
+}
+@media screen and (min-width: 769px) {
+  .menu .order__section {
+    flex-basis: 48%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu .order__section {
+    flex-basis: 29%;
+  }
+}
+.menu .order__category {
   padding-top: 30px;
   font-weight: 100;
+  font-size: 16px;
   padding-bottom: 4px;
   box-shadow: 40px 3px 0px #F7F7F7, 0px 3px 0px #99E2D0;
   overflow: hidden;
 }
 .menu .order__meal {
   margin-top: 15px;
-  flex-basis: 100%;
   display: flex;
   box-shadow: 1px 0px 10px #c4c4c4;
   border-radius: 10px 10px 10px 10px;
@@ -524,6 +569,9 @@ body {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-basis: 85%;
+  display: flex;
+  flex-direction: column;
 }
 .menu .order__meal--unselected .description__title {
   font-weight: bold;
@@ -569,8 +617,13 @@ body {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
+  flex-basis: 100%;
 }
 
+.footer {
+  position: relative;
+  z-index: 2;
+}
 .footer__logo {
   font-family: "Shrikhand", cursive;
   font-size: 18px;
@@ -606,34 +659,12 @@ body {
   position: absolute;
   cursor: pointer;
 }
-.heart--index {
-  font-size: 1.5rem;
-  bottom: 12%;
-  right: 5%;
-}
-.heart--index .favorite-empty {
-  z-index: 3;
-}
-.heart--index .favorite-full {
-  z-index: 4;
-  bottom: 12%;
-  right: 5%;
-}
-.heart--pages {
-  font-size: 1.8rem;
-  top: 12%;
-  right: 3%;
-}
 .heart .favorite-empty {
-  z-index: 1;
   transform: scale(1);
   transition: all 800ms ease-in-out;
 }
 .heart .favorite-full {
-  z-index: 2;
   position: absolute;
-  top: 0%;
-  right: 0%;
   transition: all 800ms ease-in-out;
   opacity: 0;
   transform: scale(0.1);
@@ -642,6 +673,33 @@ body {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+.heart--index {
+  font-size: 1.8rem;
+  bottom: 10%;
+  right: 6%;
+}
+.heart--index .favorite-empty {
+  z-index: 3;
+}
+.heart--index .favorite-full {
+  z-index: 4;
+  bottom: 10%;
+  right: 6%;
+}
+.heart--pages {
+  font-size: 1.8rem;
+  top: 3%;
+  right: 5%;
+}
+.heart--pages .favorite-empty {
+  z-index: 1;
+}
+.heart--pages .favorite-full {
+  z-index: 2;
+  top: 0.2em;
+  top: 3%;
+  right: 5%;
 }
 
 .btn {
@@ -662,7 +720,7 @@ body {
 }
 .btn:hover::after {
   opacity: 1;
-  transform: scale(1, 6) rotate(0deg);
+  transform: scale(2, 6);
 }
 .btn::after {
   content: "";
@@ -674,7 +732,7 @@ body {
   background: linear-gradient(to right, #fface8, #ae80e5);
   opacity: 0;
   z-index: -1;
-  transform: scale(1, 0.1) rotate(45deg);
+  transform: scale(0, 0) rotate(90deg);
   transition: all 1000ms;
 }
 .btn--index {
