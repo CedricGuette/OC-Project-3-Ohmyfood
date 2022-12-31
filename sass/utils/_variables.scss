@@ -15,10 +15,6 @@ $light-grey: #F7F7F7;
 $blue-grey: #F5EDff;
 $dark-grey: #353535;
 
-//used in "new-button-absolute" mixin, the first one is setting the default position to the "new" flag on restaurant cards, the second one is a factor between two cards
-$new-position-base: 47.8em;
-$new-position-factor: 22.3em;
-
 //map of background and font color of all sections (bgcolor / font color / do we add a __links in the panel? / flex-basis / text-align)
 $palette: (
     header: (

@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Initialisation of google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Initialisation of google font --> <!-- Preloading Shrinkhand font -->
@@ -23,135 +24,152 @@
                 <div class="name">
                     La note enchantée
                 </div>
-                <div class="favorite">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
+                <input type="checkbox" id="favorite"/>
+                <label class="heart heart--pages" for="favorite">
+                    <i class="fa-regular fa-heart favorite-empty"></i>
+                    <i class="fa-solid fa-heart favorite-full"></i>
             </div>
-            <div class="order__title">ENTRÉES</div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Ravioles de foie gras</div>
-                        <div class="description__add">Accompagnée de leur crème à la truffe</div>
+            <div class="order__section">
+                <div class="order__category">ENTRÉES</div>
+                <input type="checkbox" id="r1"/>
+                <label class="order__meal order__meal--1" for="r1">
+                    <div class="order__meal--unselected ">
+                        <div class="description">
+                            <div class="description__title">Ravioles de foie gras</div>
+                            <div class="description__add">Accompagnée de leur crème à la truffe</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">25€</div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="container__price">25€</div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r2"/>
+                <label class="order__meal order__meal--2" for="r2">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Caviar osciètre</div>
+                            <div class="description__add">Sur blini à la farine de blé noir</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">35€</div>
+                        </div>
                     </div>
-                </div>
-                <div class="pick"></div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r3"/>
+                <label class="order__meal order__meal--3" for="r3">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Homard et espuma de potiron</div>
+                            <div class="description__add">Marinés aux zestes d'orange</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">20€</div>
+                        </div>
+                    </div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r4"/>
+                <label class="order__meal order__meal--4" for="r4">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Foie gras de canard cuit entier</div>
+                            <div class="description__add">Confiture de figue et pain toasté</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">35€</div>
+                        </div>
+                    </div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
             </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Caviar osciètre</div>
-                        <div class="description__add">Sur blini à la farine de blé noir</div>
+            <div class="order__section">
+                <div class="order__category">PLATS</div>
+                <input type="checkbox" id="r5"/>
+                <label class="order__meal order__meal--1" for="r5">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Noix de coquilles Saint-Jacques</div>
+                            <div class="description__add">Sur lit de purée de céleri-rave</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">40€</div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="container__price">35€</div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r6"/>
+                <label class="order__meal order__meal--2" for="r6">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Langoustine poêlée</div>
+                            <div class="description__add">Et purée de patate douce</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">35€</div>
+                        </div>
                     </div>
-                </div>
-                <div class="pick"></div>
-          </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Homard et espuma de potiron</div>
-                        <div class="description__add">Marinés aux zestes d'orange</div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r7"/>
+                <label class="order__meal order__meal--3" for="r7">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Mijoté de queue de bœuf</div>
+                            <div class="description__add">Et riz sauvage aux zestes de citron</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">44€</div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="container__price">20€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
             </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Foie gras de canard cuit entier</div>
-                        <div class="description__add">Confiture de figue et pain toasté</div>
+            <div class="order__section">
+                <div class="order__category">DESSERTS</div>
+                <input type="checkbox" id="r8"/>
+                <label class="order__meal order__meal--1" for="r8">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Macaron noisette et chocolat</div>
+                            <div class="description__add">Glace au caramel brun et sel de Guérande</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">18€</div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="container__price">35€</div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r9"/>
+                <label class="order__meal order__meal--2" for="r9">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Baba au rhum revisité</div>
+                            <div class="description__add">Avec son coulis de citron</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">22€</div>
+                        </div>
                     </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__title">PLATS</div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Noix de coquilles Saint-Jacques</div>
-                        <div class="description__add">Sur lit de purée de céleri-rave</div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
+                <input type="checkbox" id="r10"/>
+                <label class="order__meal order__meal--3" for="r10">
+                    <div class="order__meal--unselected">
+                        <div class="description">
+                            <div class="description__title">Tarte au citron meringuée</div>
+                            <div class="description__add">Déstructurée</div>
+                        </div>
+                        <div class="container">
+                            <div class="container__price">23€</div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="container__price">40€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Langoustine poêlée</div>
-                        <div class="description__add">Et purée de patate douce</div>
-                    </div>
-                    <div class="container">
-                        <div class="container__price">35€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Mijoté de queue de bœuf</div>
-                        <div class="description__add">Et riz sauvage aux zestes de citron</div>
-                    </div>
-                    <div class="container">
-                        <div class="container__price">44€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__title">DESSERTS</div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Macaron noisette et chocolat</div>
-                        <div class="description__add">Glace au caramel brun et sel de Guérande</div>
-                    </div>
-                    <div class="container">
-                        <div class="container__price">18€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Baba au rhum revisité</div>
-                        <div class="description__add">Avec son coulis de citron</div>
-                    </div>
-                    <div class="container">
-                        <div class="container__price">22€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
-            </div>
-            <div class="order__meal">
-                <div class="order__meal--unselected">
-                    <div class="description">
-                        <div class="description__title">Tarte au citron meringuée</div>
-                        <div class="description__add">Déstructurée</div>
-                    </div>
-                    <div class="container">
-                        <div class="container__price">23€</div>
-                    </div>
-                </div>
-                <div class="pick"></div>
+                    <div class="pick"><i class="fa-solid fa-circle-check"></i></div>
+                </label>
             </div>
             <div class="buy">
-                <button class="buy__btn" type="button">Commander</button>
+                <button class="btn btn--pages" type="button">Commander</button>
             </div>
         </div>
     </main>

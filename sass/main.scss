@@ -1,5 +1,6 @@
 @import "utils/variables";
 @import "utils/mixins";
+@import "utils/keyframes";
 
 html {
     scroll-behavior: smooth;
@@ -14,6 +15,80 @@ body{
 }
 
 @include bgandfontcolor ($palette);
+
+.loader{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: wait;
+    animation: loaderbackground 3000ms linear 1 forwards;
+
+    &__text{
+        display: inline-block;
+        position: absolute;
+        top: 48%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 5;
+        font-family: $font_logo;
+        font-size: $font_logo_header_size;
+        -webkit-animation: logocolor 3000ms linear 1 forwards;
+                animation: logocolor 3000ms linear 1 forwards;
+    }
+
+    &__spinner{
+        height: 12em;
+        width: 12em;
+        display: inline-block;
+        border-radius: 10em;
+        border: 0.4em solid transparent;
+        border-top-color:$color_tertiary;
+        position: relative;
+        -webkit-animation: spin-right 3000ms linear 1 forwards;
+                animation: spin-right 3000ms linear 1 forwards;
+    }
+        
+    &__spinner::before{
+        height: 8em;
+        width: 8em;
+        display: inline-block;
+        border-radius: 8em;
+        border: 0.4em solid transparent;
+        border-top-color: $color_secondary;
+        position: absolute;
+        top:1.7em;
+        left:1.7em;
+        content: '';
+        -webkit-animation: spin-right 3000ms linear 1 forwards;
+        animation: spin-right 3000ms linear 1 forwards;
+    }
+
+    &__spinner::after{
+        height: 10em;
+        width: 10em;
+        display: inline-block;
+        border-radius: 10em;
+        border: 0.4em solid transparent;
+        border-top-color: $color_primary;
+        position: absolute;
+        top:0.7em;
+        left:0.7em;
+        content: '';
+        -webkit-animation: spin-left 3000ms linear 1 forwards;
+        animation: spin-left 3000ms linear 1 forwards;
+    }
+}
 
 .header{
     font-family: $font_logo;
@@ -76,24 +151,6 @@ body{
         margin-top: -5px;
         padding-bottom: 7px;
     }
-
-    &__btn{
-        border : none;
-        color: $white;
-        text-decoration: none;
-        border-radius: 30px;
-        font-size: 16px;
-        padding: 0.8em 1.3em;
-        box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
-        background: linear-gradient(to right, $color_secondary, $color_primary);
-        margin-bottom: 20px;
-
-        &:hover {
-            background: linear-gradient(to right, lighten($color_secondary,10%), lighten($color_primary,10%));
-            box-shadow: 0px 5px 5px darken($grey,25%);
-        }
-    }
-
 }
 
 .howtouse{
@@ -137,63 +194,66 @@ body{
 
     @include margin-title;
 
-    .restaurant{
-        flex-basis: 90%;
-        background-color: $white;
-        border-radius: 20px 20px 20px 20px;
-        box-shadow: 5px 10px 10px darken($grey,15%); //provisoire (couleur)
-        margin: 20px 0 20px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    .card{
         position: relative;
-    
-         img{
-            width: 100%;
-            flex-basis: 100%;
-            height: 174px; //provisoire
-            border-radius: 20px 20px 0px 0px;
-            object-fit: cover;
+
+        &:hover{
+            box-shadow: 5px 10px 10px darken($grey,25%);
+            border-radius: 20px 20px 20px 20px;
         }
-    
-        &__new{
-            background-color: $color_tertiary;
-            color: darken($color_tertiary,40%);
-            font-size: 12px;
-            position: absolute;
-            height: 1.7em;
-            width: 4.7em;
-            padding: 0.4em 0 0 0.5em ;
-            right: 15px;
-            top: 15px;
-        }
-    
-        &__description{
-            flex-basis: 50%;
+
+        .restaurant{
+            flex-basis: 90%;
+            background-color: $white;
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: 5px 10px 10px darken($grey,15%);
+            margin: 20px 0 20px 0;
             display: flex;
-            flex-direction: column;
-    
-            &--title{
-                flex-basis: 50%;
-                font-weight: bold;
-                padding: 1em 0.5em 0.2em 0.7em;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        
+            img{
+                width: 100%;
+                flex-basis: 100%;
+                height: 174px;
+                border-radius: 20px 20px 0px 0px;
+                -o-object-fit: cover;
+                   object-fit: cover;
             }
-
-            &--location{
+        
+            &__new{
+                background-color: $color_tertiary;
+                color: darken($color_tertiary,40%);
+                font-size: 12px;
+                position: absolute;
+                height: 1.7em;
+                width: 4.7em;
+                padding: 0.4em 0 0 0.5em ;
+                border-radius: 5px;
+                right: 15px;
+                top: 15px;
+            }
+        
+            &__description{
                 flex-basis: 50%;
-                font-weight: 100;
-                padding: 0.1em 0 1em 0.7em;
+                display: flex;
+                flex-direction: column;
+        
+                &--title{
+                    flex-basis: 50%;
+                    font-weight: bold;
+                    padding: 1em 0.5em 0.2em 0.7em;
+                }
+
+                &--location{
+                    flex-basis: 50%;
+                    font-weight: 100;
+                    padding: 0.1em 0 1em 0.7em;
+                }
             }
         }
 
-        &__favorite{
-            padding-top: 20px;
-            font-size: 25px;
-            margin: -2px 20px 0px 0;
-            font-weight: light;
-            flex-basis: 10%;
-        }
-    }
+    }    
 }
 
 .menu{
@@ -204,7 +264,8 @@ body{
     img{
         flex-basis: 100%;
         width:100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         z-index: 0;
         position: absolute;
         top: -20px;
@@ -215,29 +276,71 @@ body{
         margin-top: 250px;
         flex-basis: 100%;
         border-radius: 40px 40px 0px 0px;
-        padding: 30px 20px 0 20px;
+        padding: 30px 5% 0 5%;
 
         &__restaurant{
             display: flex;
             justify-content: space-between;
+            position: relative;
+            z-index: 0;
 
             .name{
                 font-family: $font_logo;
                 font-size: 30px;
             }
-
-            .favorite{
-              font-size: 30px; 
-              padding-right: 10px; 
-            }
         }
 
-        &__title{
+// Here we set menu checkboxes and animations related
+        input {
+            display: none;
+        }
+
+        :checked + label > .order__meal--unselected{
+            -webkit-animation: selected 800ms ease-in-out;
+                    animation: selected 800ms ease-in-out;
+            -webkit-animation-fill-mode:both;
+                    animation-fill-mode:both;
+            -webkit-animation-iteration-count: 1;
+                    animation-iteration-count: 1;
+            $checked: 1;
+        }
+
+        :checked + label > .pick >.fa-circle-check{
+            -webkit-animation: selected-logo 800ms ease-in-out;
+                    animation: selected-logo 800ms ease-in-out;
+            -webkit-animation-fill-mode:both;
+                    animation-fill-mode:both;
+            -webkit-animation-iteration-count: 1;
+                    animation-iteration-count: 1;
+        }
+
+        :not(:checked) + label > .order__meal--unselected{
+            -webkit-animation: selected-out 800ms ease-in-out;
+                    animation: selected-out 800ms ease-in-out;
+            -webkit-animation-fill-mode:forwards;
+                    animation-fill-mode:forwards;
+            -webkit-animation-iteration-count: 1;
+                    animation-iteration-count: 1;
+        }
+
+        :not(:checked) + label > .pick >.fa-circle-check{
+            -webkit-animation: selected-logo-out 800ms ease-in-out;
+                    animation: selected-logo-out 800ms ease-in-out;
+            -webkit-animation-fill-mode:forwards;
+                    animation-fill-mode:forwards;
+            -webkit-animation-iteration-count: 1;
+                    animation-iteration-count: 1;
+        }
+
+//end of menu chexboxes
+
+        &__category{
             flex-basis: 100%;
             padding-top: 30px;
             font-weight: 100;
             padding-bottom: 4px;
             box-shadow:   40px 3px 0px  map-get(map-get($palette, order), bg), 0px 3px 0px $color_tertiary;
+            overflow: hidden;
         }
 
         &__meal{
@@ -249,6 +352,16 @@ body{
             position: relative;
             z-index: 0;
             overflow: hidden;
+            -webkit-animation: menu 1000ms both 1;
+                    animation: menu 1000ms both 1;
+
+
+            @for $i from 1 through 4 {
+                &--#{$i} {
+                    -webkit-animation-delay: 500ms + (100ms * $i);
+                            animation-delay: 500ms + (100ms * $i);
+                }
+            }
 
             &--unselected{
 
@@ -261,9 +374,12 @@ body{
                 position: relative;
                 z-index: 2;
                 cursor: pointer;
+                min-width: 0;
 
                 .description{
                     min-width: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
     
                     &__title{
                         font-weight: bold;
@@ -292,20 +408,25 @@ body{
                         right: 5px;
                   }
                 }
-
-                &:hover{
-                    animation: selected 1000ms;
-                }
             }
 
             .pick{
                 background-color: $color_tertiary;
-                border-radius: 0 10px 10px 0;
+                border-radius: 10px 10px 10px 10px;
                 position: absolute;
-                width: 20%;
+                width: 100%;
                 height: 100%;
                 z-index: 1;
                 right:0;
+
+                i{
+                    font-size: 30px;
+                    color: $white;
+                    position: absolute;
+                    top:25%;
+                    right: -15%;
+                    z-index: 2;
+                }
             }
         }
     
@@ -313,28 +434,9 @@ body{
             text-align: center;
             margin-top: 40px;
             margin-bottom: 30px;
-
-            &__btn{
-                border : none;
-                color: $white;
-                border-radius: 30px;
-                font-size: 15px;
-                padding: 0.9em 3em;
-                box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
-                background: linear-gradient(to right, $color_secondary, $color_primary);
-                margin-bottom: 20px;
-        
-                &:hover{
-                    background: linear-gradient(to right, lighten($color_secondary,10%), lighten($color_primary,10%));
-                    box-shadow: 0px 5px 5px darken($grey,25%);
-                }
-            }
         }
     }
 }
-
-@import "utils/keyframes";
-
 
 .footer{
 
@@ -346,7 +448,8 @@ body{
     }
 
      ul{
-        padding-inline-start: 25px;
+        -webkit-padding-start: 25px;
+                padding-inline-start: 25px;
         line-height: 1.9em;
 
         i{
@@ -356,3 +459,124 @@ body{
         }
     }
 }
+
+
+
+.heart{
+
+}
+
+//we set the animation of the heart here
+
+:checked + label > .favorite-full{
+    opacity: 1;
+    transform: scale(1);
+}
+
+:checked + label > .favorite-empty{
+    transform: scale(0.2);
+}
+
+.card{
+
+    input {
+        display: none;
+    }
+}
+
+.heart{
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+
+    &--index{
+
+        font-size: 1.5rem;
+        bottom: 12%;
+        right: 5%;
+    
+        .favorite-empty{
+            z-index: 3;
+        }
+    
+        .favorite-full{
+            z-index: 4;
+            bottom: 12%;
+            right: 5%;
+        }
+    }
+
+    &--pages{
+        font-size: 1.8rem;
+        top: 12%;
+        right: 3%;
+    }
+
+    .favorite-empty{
+        z-index: 1;
+        transform: scale(1);
+        transition: all 800ms ease-in-out;
+    }
+
+    .favorite-full{
+        z-index: 2;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+        transform: scale(0.1);
+        background: linear-gradient(to right, $color_secondary, $color_primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
+}
+
+.btn{
+    border : none;
+    color: $white;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
+    background: linear-gradient(to right, $color_secondary, $color_primary);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 5px 5px darken($grey,25%);
+        &::after{
+            opacity: 1;
+            transform: scale(1, 6) rotate(0deg);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, lighten($color_secondary,10%), lighten($color_primary,10%));
+        opacity: 0;
+        z-index: -1; 
+        transform: scale(1, 0.1) rotate(45deg);
+        transition: all 1000ms;
+    }
+
+    &--index{
+        font-size: 16px;
+        padding: 0.8em 1.3em;
+    }
+
+    &--pages{
+        font-size: 15px;
+        padding: 0.9em 3em;
+    }
+}
+
