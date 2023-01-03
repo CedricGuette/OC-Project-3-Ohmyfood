@@ -444,8 +444,8 @@ body {
 }
 .menu img {
   flex-basis: 100%;
-  width: 120%;
-  max-height: 500px;
+  height: 500px;
+  width: 100%;
   max-width: 1400px;
   -o-object-fit: cover;
   object-fit: cover;
