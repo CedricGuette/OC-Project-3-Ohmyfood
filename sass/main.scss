@@ -151,13 +151,13 @@ body{
     justify-content: center;
     padding-bottom: 30px;
 
-    h2{
+    h1{
         font-weight: bold;
         padding-top: 15px;
         flex-basis: 65%;
     }
 
-    h4{
+    p{
         flex-basis: 90%;
         font-weight: 100;
         margin-top: -5px;
@@ -242,6 +242,10 @@ body{
         flex-basis:90%;
         position: relative;
         margin: 20px 0 20px 0;
+
+        input {
+            display: none;
+        }
         
         &:hover {
             box-shadow: 5px 10px 10px darken($grey,25%);
@@ -343,10 +347,14 @@ body{
         &__restaurant{
             position: relative;
             flex-basis: 100%;
+            display: flex;
+            justify-content: space-between;
 
             .name{
                 font-family: $font_logo;
                 font-size: 30px;
+                margin:0;
+                padding: 0;
             }
         }
 
@@ -402,7 +410,7 @@ body{
             }
 
             @include desktop-only{
-                flex-basis: 29%;    
+                flex-basis: 31%;    
             }
         }
 
@@ -410,7 +418,7 @@ body{
             padding-top: 30px;
             font-weight: 100;
             font-size: 16px;            padding-bottom: 4px;
-            box-shadow:   40px 3px 0px  map-get(map-get($palette, order), bg), 0px 3px 0px $color_tertiary;
+            box-shadow:   40px 4px 0px  map-get(map-get($palette, order), bg), 1px 3px 0px $color_tertiary;
             overflow: hidden;
         }
 
@@ -483,11 +491,12 @@ body{
 
             .pick{
                 background-color: $color_tertiary;
-                border-radius: 10px 10px 10px 10px;
+                border-radius: 0px 10px 10px 0px;
                 position: absolute;
-                width: 100%;
+                width: 21%;
                 height: 100%;
                 z-index: 1;
+                top: 0;
                 right:0;
 
                 i{
@@ -495,7 +504,7 @@ body{
                     color: $white;
                     position: absolute;
                     top:25%;
-                    right: -15%;
+                    right: -50%;
                     z-index: 2;
                 }
             }
@@ -535,39 +544,31 @@ body{
 }
 
 
-//we set the animation of the heart here
+//we set the animation of hearts here
 
 :checked + label > .favorite-full{
     opacity: 1;
-    transform: scale(1);
 }
 
 :checked + label > .favorite-empty{
-    transform: scale(0.2);
-}
-
-.card{
-
-    input {
-        display: none;
-    }
+    color: $color_primary;
 }
 
 .heart{
-    display: inline-block;
-    position: absolute;
     cursor: pointer;
 
     .favorite-empty{
-        transform: scale(1);
+        position: absolute;
         transition: all 800ms ease-in-out;
+        font-size: 1.8rem;
+        color: black;
     }
 
     .favorite-full{
         position: absolute;
         transition: all 800ms ease-in-out;
         opacity: 0;
-        transform: scale(0.1);
+        font-size: 1.8rem;
         background: linear-gradient(to right, $color_secondary, $color_primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -578,8 +579,9 @@ body{
     &--index{
 
         font-size: 1.8rem;
-        bottom: 10%;
-        right: 6%;
+        bottom: 22%;
+        right: 15%;
+        position: absolute;
     
         .favorite-empty{
             z-index: 3;
@@ -587,15 +589,21 @@ body{
     
         .favorite-full{
             z-index: 4;
-            bottom: 10%;
-            right: 6%;
         }
     }
 
     &--pages{
-        font-size: 1.8rem;
-        top: 3%;
-        right: 5%;
+        position: absolute;
+        top: 20%;
+        right: 10%;
+
+        @include desktop-only{
+            right: 3%;
+        }
+
+        @include tablet-only{
+            right: 5%;
+        }
 
         .favorite-empty{
             z-index: 1;
@@ -603,14 +611,11 @@ body{
     
         .favorite-full{
             z-index: 2;
-            top: 0.2em;
-            top: 3%;
-            right: 5%;
         }
     }
 }
 
-//making button design
+//making button design and animation
 
 .btn{
     border : none;

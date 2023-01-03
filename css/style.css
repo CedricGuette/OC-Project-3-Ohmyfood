@@ -22,20 +22,20 @@
     transform: rotate(-720deg);
   }
   100% {
-    right: 5%;
+    right: 25%;
     transform: rotate(-720deg);
   }
 }
 @keyframes selected-logo-out {
   0% {
-    right: 5%;
+    right: 25%;
     transform: rotate(-720deg);
   }
   20% {
     transform: rotate(-720deg);
   }
   100% {
-    right: -15%;
+    right: -50%;
     transform: rotate(0deg);
   }
 }
@@ -56,6 +56,10 @@
 }
 @keyframes logocolor {
   0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
     color: #9356DC;
   }
   50% {
@@ -281,12 +285,12 @@ body {
   justify-content: center;
   padding-bottom: 30px;
 }
-.start h2 {
+.start h1 {
   font-weight: bold;
   padding-top: 15px;
   flex-basis: 65%;
 }
-.start h4 {
+.start p {
   flex-basis: 90%;
   font-weight: 100;
   margin-top: -5px;
@@ -370,6 +374,9 @@ body {
   flex-basis: 90%;
   position: relative;
   margin: 20px 0 20px 0;
+}
+.listing .card input {
+  display: none;
 }
 .listing .card:hover {
   box-shadow: 5px 10px 10px #aaaaaa;
@@ -465,10 +472,14 @@ body {
 .menu .order__restaurant {
   position: relative;
   flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .menu .order__restaurant .name {
   font-family: "Shrikhand", cursive;
   font-size: 30px;
+  margin: 0;
+  padding: 0;
 }
 .menu .order input {
   display: none;
@@ -515,7 +526,7 @@ body {
 }
 @media screen and (min-width: 1024px) {
   .menu .order__section {
-    flex-basis: 29%;
+    flex-basis: 31%;
   }
 }
 .menu .order__category {
@@ -523,7 +534,7 @@ body {
   font-weight: 100;
   font-size: 16px;
   padding-bottom: 4px;
-  box-shadow: 40px 3px 0px #F7F7F7, 0px 3px 0px #99E2D0;
+  box-shadow: 40px 4px 0px #F7F7F7, 1px 3px 0px #99E2D0;
   overflow: hidden;
 }
 .menu .order__meal {
@@ -598,11 +609,12 @@ body {
 }
 .menu .order__meal .pick {
   background-color: #99E2D0;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 0px 10px 10px 0px;
   position: absolute;
-  width: 100%;
+  width: 21%;
   height: 100%;
   z-index: 1;
+  top: 0;
   right: 0;
 }
 .menu .order__meal .pick i {
@@ -610,7 +622,7 @@ body {
   color: #fff;
   position: absolute;
   top: 25%;
-  right: -15%;
+  right: -50%;
   z-index: 2;
 }
 .menu .order .buy {
@@ -643,31 +655,26 @@ body {
 
 :checked + label > .favorite-full {
   opacity: 1;
-  transform: scale(1);
 }
 
 :checked + label > .favorite-empty {
-  transform: scale(0.2);
-}
-
-.card input {
-  display: none;
+  color: #9356DC;
 }
 
 .heart {
-  display: inline-block;
-  position: absolute;
   cursor: pointer;
 }
 .heart .favorite-empty {
-  transform: scale(1);
+  position: absolute;
   transition: all 800ms ease-in-out;
+  font-size: 1.8rem;
+  color: black;
 }
 .heart .favorite-full {
   position: absolute;
   transition: all 800ms ease-in-out;
   opacity: 0;
-  transform: scale(0.1);
+  font-size: 1.8rem;
   background: linear-gradient(to right, #FF79DA, #9356DC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -676,30 +683,36 @@ body {
 }
 .heart--index {
   font-size: 1.8rem;
-  bottom: 10%;
-  right: 6%;
+  bottom: 22%;
+  right: 15%;
+  position: absolute;
 }
 .heart--index .favorite-empty {
   z-index: 3;
 }
 .heart--index .favorite-full {
   z-index: 4;
-  bottom: 10%;
-  right: 6%;
 }
 .heart--pages {
-  font-size: 1.8rem;
-  top: 3%;
-  right: 5%;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+@media screen and (min-width: 1024px) {
+  .heart--pages {
+    right: 3%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .heart--pages {
+    right: 5%;
+  }
 }
 .heart--pages .favorite-empty {
   z-index: 1;
 }
 .heart--pages .favorite-full {
   z-index: 2;
-  top: 0.2em;
-  top: 3%;
-  right: 5%;
 }
 
 .btn {

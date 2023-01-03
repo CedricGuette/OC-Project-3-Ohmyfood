@@ -24,21 +24,21 @@
         transform: rotate(-720deg);
     }
     100% {
-        right: 5%;
+        right: 25%;
         transform: rotate(-720deg);
     }
 }
 
 @keyframes selected-logo-out{
     0% {
-        right: 5%;
+        right: 25%;
         transform: rotate(-720deg);
     }
     20%{
         transform: rotate(-720deg);
     }
     100% {
-        right: -15%;
+        right: -50%;
         transform: rotate(0deg);
     }
 }
@@ -65,7 +65,11 @@
 
 @keyframes logocolor{
     0%{
-        color: $color_primary;
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
+        color: $color_primary;  //giving a delay to load the font
     }
     50%{
         color: $color_secondary;
