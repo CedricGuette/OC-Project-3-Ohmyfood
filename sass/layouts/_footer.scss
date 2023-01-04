@@ -1,0 +1,23 @@
+.footer{
+    position: relative;
+    z-index: 2;
+
+    &__logo{
+        font-family: $font_logo;
+        font-size: $font_logo_footer_size;
+        padding-left: 25px;
+        padding-top: 18px;
+    }
+
+     ul{
+        -webkit-padding-start: 25px;
+                padding-inline-start: 25px;
+        line-height: 1.9em;
+
+        i{
+            font-size: 12px;
+            padding-right: 5px;
+            width: 15px;
+        }
+    }
+}

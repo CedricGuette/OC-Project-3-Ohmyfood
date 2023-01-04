@@ -1,0 +1,18 @@
+html {
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    background-color: lighten($color_primary,35%);
+}
+
+
+body{
+    font-family: $font_page;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    justify-content: space-around;
+    margin: 0;
+    max-width: $max-width;
+}

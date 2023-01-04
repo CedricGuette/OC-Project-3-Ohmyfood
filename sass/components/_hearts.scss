@@ -1,0 +1,70 @@
+//we set the animation of hearts here
+
+:checked + label > .favorite-full{
+    opacity: 1;
+}
+
+:checked + label > .favorite-empty{
+    color: $color_primary;
+}
+
+.heart{
+    cursor: pointer;
+
+    .favorite-empty{
+        position: absolute;
+        transition: all 800ms ease-in-out;
+        font-size: 1.8rem;
+        color: black;
+    }
+
+    .favorite-full{
+        position: absolute;
+        transition: all 800ms ease-in-out;
+        opacity: 0;
+        font-size: 1.8rem;
+        background: linear-gradient(to right, $color_secondary, $color_primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
+
+    &--index{
+
+        font-size: 1.8rem;
+        bottom: 22%;
+        right: 15%;
+        position: absolute;
+    
+        .favorite-empty{
+            z-index: 3;
+        }
+    
+        .favorite-full{
+            z-index: 4;
+        }
+    }
+
+    &--pages{
+        position: absolute;
+        top: 20%;
+        right: 10%;
+
+        @include desktop-only{
+            right: 3%;
+        }
+
+        @include tablet-only{
+            right: 5%;
+        }
+
+        .favorite-empty{
+            z-index: 1;
+        }
+    
+        .favorite-full{
+            z-index: 2;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+//making button design and animation
+
+.btn{
+    border : none;
+    color: $white;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px darken($grey,15%); //provisoire (couleur)
+    background: linear-gradient(to right, $color_secondary, $color_primary);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 5px 5px darken($grey,25%);
+        &::after{
+            opacity: 1;
+            transform: scale(2, 6) ;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, lighten($color_secondary,10%), lighten($color_primary,10%));
+        opacity: 0;
+        z-index: -1; 
+        transform: scale(0, 0) rotate(90deg);
+        transition: all 1000ms;
+    }
+
+    &--index{
+        font-size: 16px;
+        padding: 0.8em 1.3em;
+    }
+
+    &--pages{
+        font-size: 15px;
+        padding: 0.9em 3em;
+    }
+}

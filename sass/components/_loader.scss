@@ -1,0 +1,75 @@
+//Setting the loader animation
+
+.loader{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: wait;
+    animation: loaderbackground 3000ms linear 1 forwards;
+
+    &__text{
+        display: inline-block;
+        position: absolute;
+        top: 48%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 5;
+        font-family: $font_logo;
+        font-size: $font_logo_header_size;
+        -webkit-animation: logocolor 3000ms linear 1 forwards;
+                animation: logocolor 3000ms linear 1 forwards;
+    }
+
+    &__spinner{
+        height: 12em;
+        width: 12em;
+        display: inline-block;
+        border-radius: 10em;
+        border: 0.4em solid transparent;
+        border-top-color:$color_tertiary;
+        position: relative;
+        -webkit-animation: spin-right 3000ms linear 1 forwards;
+                animation: spin-right 3000ms linear 1 forwards;
+    }
+        
+    &__spinner::before{
+        height: 8em;
+        width: 8em;
+        display: inline-block;
+        border-radius: 8em;
+        border: 0.4em solid transparent;
+        border-top-color: $color_secondary;
+        position: absolute;
+        top:1.7em;
+        left:1.7em;
+        content: '';
+        -webkit-animation: spin-right 3000ms linear 1 forwards;
+        animation: spin-right 3000ms linear 1 forwards;
+    }
+
+    &__spinner::after{
+        height: 10em;
+        width: 10em;
+        display: inline-block;
+        border-radius: 10em;
+        border: 0.4em solid transparent;
+        border-top-color: $color_primary;
+        position: absolute;
+        top:0.7em;
+        left:0.7em;
+        content: '';
+        -webkit-animation: spin-left 3000ms linear 1 forwards;
+        animation: spin-left 3000ms linear 1 forwards;
+    }
+}
