@@ -3,7 +3,7 @@
     font-family: $font_logo;
     font-size: $font_logo_header_size;
     padding: 10px 0 10px 0;
-    box-shadow: 0 5px 3px darken($grey,15%);
+    box-shadow: 0 5px 5px darken($grey,45%);
     z-index: 1;
 
     &__links{
