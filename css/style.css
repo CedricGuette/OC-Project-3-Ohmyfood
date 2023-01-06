@@ -409,29 +409,31 @@ body {
   margin: 30px 0px 3px 20px;
   flex-basis: 100%;
 }
-.listing .card {
+
+.card {
   flex-basis: 90%;
   position: relative;
   margin: 20px 0 20px 0;
 }
-.listing .card input {
+.card input {
   display: none;
 }
-.listing .card:hover {
+.card:hover {
   box-shadow: 5px 10px 10px #aaaaaa;
   border-radius: 20px 20px 20px 20px;
 }
 @media screen and (min-width: 769px) {
-  .listing .card {
+  .card {
     flex-basis: 45%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .listing .card {
+  .card {
     flex-basis: 23%;
   }
 }
-.listing .card .restaurant {
+
+.restaurant {
   position: relative;
   background-color: #fff;
   border-radius: 20px 20px 20px 20px;
@@ -440,7 +442,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.listing .card .restaurant img {
+.restaurant img {
   width: 100%;
   flex-basis: 100%;
   height: 174px;
@@ -448,7 +450,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.listing .card .restaurant__new {
+.restaurant__new {
   background-color: #99E2D0;
   color: #278870;
   font-size: 12px;
@@ -460,16 +462,16 @@ body {
   right: 15px;
   top: 15px;
 }
-.listing .card .restaurant__description {
+.restaurant__description {
   display: flex;
   flex-direction: column;
 }
-.listing .card .restaurant__description--title {
+.restaurant__description--title {
   flex-basis: 50%;
   font-weight: bold;
   padding: 1em 0.5em 0.2em 0.7em;
 }
-.listing .card .restaurant__description--location {
+.restaurant__description--location {
   flex-basis: 50%;
   font-weight: 100;
   padding: 0.1em 0 1em 0.7em;
@@ -498,7 +500,8 @@ body {
     top: -150px;
   }
 }
-.menu .order {
+
+.order {
   z-index: 1;
   margin-top: 250px;
   flex-basis: 100%;
@@ -508,51 +511,51 @@ body {
   border-radius: 40px 40px 0px 0px;
   padding: 30px 5% 0 5%;
 }
-.menu .order__restaurant {
+.order__restaurant {
   position: relative;
   flex-basis: 100%;
   display: flex;
   justify-content: space-between;
 }
-.menu .order__restaurant .name {
+.order__restaurant .name {
   font-family: "Shrikhand", cursive;
   font-size: 30px;
   margin: 0;
   padding: 0;
 }
-.menu .order input {
+.order input {
   display: none;
 }
-.menu .order :checked + label > .order__meal--unselected {
+.order :checked + label > .order__meal--unselected {
   -webkit-animation: selected 800ms ease-in-out 1 forwards;
   animation: selected 800ms ease-in-out 1 forwards;
 }
-.menu .order :checked + label > .pick > .fa-circle-check {
+.order :checked + label > .pick > .fa-circle-check {
   -webkit-animation: selected-logo 800ms ease-in-out 1 forwards;
   animation: selected-logo 800ms ease-in-out 1 forwards;
 }
-.menu .order :not(:checked) + label > .order__meal--unselected {
+.order :not(:checked) + label > .order__meal--unselected {
   -webkit-animation: selected-out 800ms ease-in-out 1 forwards;
   animation: selected-out 800ms ease-in-out 1 forwards;
 }
-.menu .order :not(:checked) + label > .pick > .fa-circle-check {
+.order :not(:checked) + label > .pick > .fa-circle-check {
   -webkit-animation: selected-logo-out 800ms ease-in-out 1 forwards;
   animation: selected-logo-out 800ms ease-in-out 1 forwards;
 }
-.menu .order__section {
+.order__section {
   flex-basis: 100%;
 }
 @media screen and (min-width: 769px) {
-  .menu .order__section {
+  .order__section {
     flex-basis: 48%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .menu .order__section {
+  .order__section {
     flex-basis: 31%;
   }
 }
-.menu .order__category {
+.order__category {
   padding-top: 30px;
   font-weight: 100;
   font-size: 16px;
@@ -560,7 +563,7 @@ body {
   box-shadow: 40px 4px 0px #F7F7F7, 1px 3px 0px #99E2D0;
   overflow: hidden;
 }
-.menu .order__meal {
+.order__meal {
   margin-top: 15px;
   display: flex;
   box-shadow: 1px 0px 10px #c4c4c4;
@@ -571,23 +574,23 @@ body {
   -webkit-animation: menu 1000ms 1 both;
   animation: menu 1000ms 1 both;
 }
-.menu .order__meal--1 {
+.order__meal--1 {
   -webkit-animation-delay: 600ms;
   animation-delay: 600ms;
 }
-.menu .order__meal--2 {
+.order__meal--2 {
   -webkit-animation-delay: 700ms;
   animation-delay: 700ms;
 }
-.menu .order__meal--3 {
+.order__meal--3 {
   -webkit-animation-delay: 800ms;
   animation-delay: 800ms;
 }
-.menu .order__meal--4 {
+.order__meal--4 {
   -webkit-animation-delay: 900ms;
   animation-delay: 900ms;
 }
-.menu .order__meal--unselected {
+.order__meal--unselected {
   background-color: #fff;
   border-radius: 10px 0px 0px 10px;
   padding: 10px;
@@ -599,7 +602,8 @@ body {
   cursor: pointer;
   min-width: 0;
 }
-.menu .order__meal--unselected .description {
+
+.description {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -607,30 +611,32 @@ body {
   display: flex;
   flex-direction: column;
 }
-.menu .order__meal--unselected .description__title {
+.description__title {
   font-weight: bold;
   padding-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .order__meal--unselected .description__add {
+.description__add {
   font-weight: 100;
   font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .order__meal--unselected .container {
+
+.container {
   position: relative;
   flex-basis: 15%;
 }
-.menu .order__meal--unselected .container__price {
+.container__price {
   position: absolute;
   bottom: 0px;
   right: 5px;
 }
-.menu .order__meal .pick {
+
+.pick {
   background-color: #99E2D0;
   border-radius: 0px 10px 10px 0px;
   position: absolute;
@@ -640,7 +646,7 @@ body {
   top: 0;
   right: 0;
 }
-.menu .order__meal .pick i {
+.pick i {
   font-size: 30px;
   color: #fff;
   position: absolute;
@@ -648,7 +654,8 @@ body {
   right: -50%;
   z-index: 2;
 }
-.menu .order .buy {
+
+.buy {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
@@ -668,8 +675,7 @@ body {
   align-items: center;
   flex-direction: column;
   cursor: wait;
-  -webkit-animation: loaderbackground 3000ms linear 1 forwards;
-          animation: loaderbackground 3000ms linear 1 forwards;
+  animation: loaderbackground 3000ms linear 1 forwards;
 }
 .loader__text {
   display: inline-block;
@@ -829,3 +835,5 @@ body {
   font-size: 15px;
   padding: 0.9em 3em;
 }
+
+/*# sourceMappingURL=style.css.map */

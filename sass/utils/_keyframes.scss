@@ -1,3 +1,12 @@
+@-webkit-keyframes selected{
+    0% {
+        flex-basis: 100%;
+    }
+    100% {
+        flex-basis: 76%;
+    }
+}
+
 @keyframes selected{
     0% {
         flex-basis: 100%;
@@ -7,12 +16,34 @@
     }
 }
 
+@-webkit-keyframes selected-out{
+    0% {
+        flex-basis: 76%;
+    }
+    100% {
+        flex-basis: 100%;
+    }
+}
+
 @keyframes selected-out{
     0% {
         flex-basis: 76%;
     }
     100% {
         flex-basis: 100%;
+    }
+}
+
+@-webkit-keyframes selected-logo{
+    0% {
+        transform: rotate(0deg);
+    }
+    80%{
+        transform: rotate(-720deg);
+    }
+    100% {
+        right: 25%;
+        transform: rotate(-720deg);
     }
 }
 
@@ -26,6 +57,20 @@
     100% {
         right: 25%;
         transform: rotate(-720deg);
+    }
+}
+
+@-webkit-keyframes selected-logo-out{
+    0% {
+        right: 25%;
+        transform: rotate(-720deg);
+    }
+    20%{
+        transform: rotate(-720deg);
+    }
+    100% {
+        right: -50%;
+        transform: rotate(0deg);
     }
 }
 
@@ -43,6 +88,17 @@
     }
 }
 
+@-webkit-keyframes menu{
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 @keyframes menu{
     0% {
         opacity: 0;
@@ -54,12 +110,38 @@
     }
 }
 
+@-webkit-keyframes loaderbackground{
+    0%{
+
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+
 @keyframes loaderbackground{
     0%{
 
     }
     100%{
         visibility: hidden;
+    }
+}
+
+@-webkit-keyframes logocolor{
+    0%{
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
+        color: $color_primary;  //giving a delay to load the font
+    }
+    50%{
+        color: $color_secondary;
+    }
+    100%{
+        color: $color_tertiary;
+
     }
 }
 
@@ -80,6 +162,16 @@
     }
 }
 
+@-webkit-keyframes spin-right{
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(720deg);
+
+    }
+}
+
 @keyframes spin-right{
     0%{
         transform: rotate(-20deg);
@@ -87,6 +179,15 @@
     100%{
         transform: rotate(720deg);
 
+    }
+}
+
+@-webkit-keyframes spin-left{
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(-1440deg);
     }
 }
 
