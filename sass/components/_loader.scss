@@ -13,7 +13,8 @@
     align-items: center;
     flex-direction: column;
     cursor: wait;
-    animation: loaderbackground 3000ms linear 1 forwards;
+    -webkit-animation: loaderbackground 3000ms linear 1 forwards;
+            animation: loaderbackground 3000ms linear 1 forwards;
 
     &__text{
         display: inline-block;
